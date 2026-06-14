@@ -29,7 +29,7 @@ demo, pero en producción no puedes depender de un único proveedor: pondría
 caché por hash del texto del lead (muchos leads llegan duplicados),
 fallback a un segundo modelo si Groq da 429/5xx sostenido, presupuesto
 mensual con alertas y kill-switch automático, y un experimento A/B
-periódico entre Llama 3.3 70B, Claude Haiku y GPT-4o-mini midiendo
+periódico entre Llama 3.3 70B, Gemini Flash y GPT-4o-mini midiendo
 precisión real contra leads etiquetados por humanos — porque el modelo más
 barato hoy no es el mejor mañana y la deriva en calidad solo se ve si la
 mides.
