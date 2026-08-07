@@ -1,0 +1,2 @@
+# Dependencias solo para tests/CI.
+pytest>=8.0

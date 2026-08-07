@@ -1,5 +1,7 @@
 # Orbyn Lead Qualifier Bot
 
+[![CI](https://github.com/burgosdavid057-art/orbyn-lead-bot/actions/workflows/ci.yml/badge.svg)](https://github.com/burgosdavid057-art/orbyn-lead-bot/actions/workflows/ci.yml)
+
 Bot de Telegram que recibe leads en texto libre, los cualifica contra el ICP
 de Orbyn usando un LLM (Llama 3.3 70B vía Groq, gratis) y registra cada
 decisión en una Google Sheet.
@@ -164,6 +166,22 @@ Criterios:
 ```
 
 Y aparece una fila nueva en la Google Sheet con timestamp, datos extraídos, decisión y razonamiento.
+
+## Tests automáticos
+
+Además del `test_local.py` (que llama a Groq/Sheets de verdad), hay una suite de
+tests unitarios que corre **sin red ni credenciales**: mockea la llamada a Groq
+y cubre la lógica que sostiene la calidad del bot — la defensa anti-alucinación
+(forzar `qualified=false` si algún criterio falla), el parseo defensivo de la
+respuesta del LLM, el truncado de entradas largas y el formateo del mensaje.
+
+```bash
+pip install -r requirements-dev.txt
+pytest
+```
+
+Corre en CI (GitHub Actions) contra Python 3.11, 3.12 y 3.13. Ver
+[CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Decisiones técnicas notables
 
