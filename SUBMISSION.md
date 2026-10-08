@@ -42,7 +42,7 @@ Para probarlo basta con escribirle un texto libre con datos de un lead. Algunos 
 
 2. **Defensa en profundidad contra prompt injection y abuso.** El prompt ya delimita la entrada con `<<<LEAD>>>` y fuerza coherencia entre los checks individuales y la decisión final (si algún criterio es false, anulo el qualified=true aunque el LLM se lo invente); en producción añadiría rate-limiting por chat_id, validación estricta del JSON de salida con Pydantic, un clasificador previo barato para descartar inputs no-lead antes de pagar tokens del modelo grande, y secretos en vault con rotación automática.
 
-3. **Control de costes y SLAs del LLM.** Groq gratuito es perfecto para la demo, pero en producción no puedes depender de un único proveedor: pondría caché por hash del texto del lead (muchos llegan duplicados), fallback a un segundo modelo si Groq da 429 sostenido, presupuesto mensual con alertas y kill-switch automático, y A/B periódico entre Llama 3.3, Claude Haiku y GPT-4o-mini midiendo precisión contra leads etiquetados — porque el modelo más barato hoy no es el mejor mañana.
+3. **Control de costes y SLAs del LLM.** Groq gratuito es perfecto para la demo, pero en producción no puedes depender de un único proveedor: pondría caché por hash del texto del lead (muchos llegan duplicados), fallback a un segundo modelo si Groq da 429 sostenido, presupuesto mensual con alertas y kill-switch automático, y A/B periódico entre Llama 3.3, Gemini Flash y GPT-4o-mini midiendo precisión contra leads etiquetados — porque el modelo más barato hoy no es el mejor mañana.
 
 Cualquier duda quedo atento. Gracias por la oportunidad.
 
