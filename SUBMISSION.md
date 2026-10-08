@@ -25,7 +25,7 @@ Hola equipo de Orbyn,
 
 Adjunto la entrega de la prueba técnica del agente de cualificación de leads:
 
-- **Bot de Telegram**: `@orbyn_lead_qualifier_bot` (sustituir por el username real)
+- **Bot de Telegram**: `@Orbynleadquali_bot` (sustituir por el username real)
 - **Repositorio**: https://github.com/TU_USUARIO/orbyn-lead-bot
 - **Video de 1 minuto**: https://loom.com/share/XXXX (sustituir)
 - **Google Sheet de prueba** (modo lectura): https://docs.google.com/spreadsheets/d/SHEET_ID
